@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+}
+
+.container img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.container button {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.container p {
+  position: absolute;
+  top: 40%;
+  left: 62%;
+  transform: translate(-50%, -65%);
+  color: white;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}

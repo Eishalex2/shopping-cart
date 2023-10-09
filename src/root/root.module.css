@@ -4,12 +4,17 @@
   padding: 0;
 }
 
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
 header {
   background-color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 20% 10px 20px;
 }
 
 li {
@@ -27,6 +32,17 @@ a:hover {
 
 ul {
   display: flex;
-  gap: 50px;
+  gap: 80%;
   font-size: 1.2rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
 }

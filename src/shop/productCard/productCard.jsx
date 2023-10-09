@@ -1,0 +1,1 @@
+//individual card component that shows on the products page
