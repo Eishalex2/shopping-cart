@@ -1,29 +1,23 @@
 import { useState, useEffect } from "react";
+import Card from "./productCard/productCard";
+import styles from './shop.module.css';
 
-const Shop = () => {
-  const [products, setProducts] = useState(null);
-  const [error, setError] = useState(null);
+const Shop = ({ data }) => {
 
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=6', { mode: "cors"})
-      .then((response) => response.json())
-      .then((response) => setProducts(response))
-      .catch((error) => setError(error));
-  });
-
-  
+  console.log(data);
 
   return (
     <div>
-      <p>Shop</p>
-      {products && (
-        products.map((product) => {
+      {data && (
+        data.map((product) => {
           return (
-            <>
-              <p key={product.id}>{product.title}</p>
-              <img src={product.image} alt={product.title} />
-            </>
-
+            <Card 
+              key = {product.id}
+              id = {product.id}
+              title = {product.title}
+              image = {product.image}
+              price = {product.price}
+            />
           )
         })
       )}

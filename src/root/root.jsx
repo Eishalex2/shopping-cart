@@ -15,9 +15,9 @@ const Root = () => {
         </nav>
       </header>
       <Outlet />
-      <footer>
+      {/* <footer>
         Footer
-      </footer>
+      </footer> */}
     </>
   )
 }
