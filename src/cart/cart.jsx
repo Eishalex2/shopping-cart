@@ -1,8 +1,22 @@
-const Cart = () => {
+const Cart = ({items}) => {
+
+  console.log(items);
+
   return (
-    <div>
-      Cart
-    </div>
+    <>
+      {
+        items && (
+          items.map((item) => {
+            return (
+              <div key={item.id}>
+                <p>{item.title}</p>
+                <p>{item.quantity}</p>
+              </div>
+            )
+          })
+        )
+      }
+    </>
   )
 }
 

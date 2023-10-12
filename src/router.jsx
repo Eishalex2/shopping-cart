@@ -9,6 +9,7 @@ import Details from './details/details';
 
 const Router = () => {
   const [data, setData] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=6', {mode: 'cors'})
@@ -16,12 +17,25 @@ const Router = () => {
       .then((response) => setData(response));
   }, []);
 
+  const addToCart = (product, quantity) => {
+    setCartItems((prevCart) => [
+      { ...product, quantity: quantity }, ...prevCart, 
+    ]);
+  }
 
+  const getCartTotalItems = () => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      let quantity = Number(item.quantity);
+      total += quantity;
+    });
+    return total;
+  }
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root totalItems={getCartTotalItems()}/>,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -34,11 +48,11 @@ const Router = () => {
         },
         {
           path: "product/:productId",
-          element: <Details data={data}/>
+          element: <Details data={data} addToCart={addToCart}/>
         },
         {
           path: "cart",
-          element: <Cart />
+          element: <Cart items={cartItems}/>
         }
       ]
     },

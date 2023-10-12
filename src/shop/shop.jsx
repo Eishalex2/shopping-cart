@@ -4,8 +4,6 @@ import styles from './shop.module.css';
 
 const Shop = ({ data }) => {
 
-  console.log(data);
-
   return (
     <div>
       {data && (
