@@ -23,6 +23,22 @@ const Router = () => {
     ]);
   }
 
+  const removeFromCart = (id) => {
+    setCartItems((prevCart) => prevCart.filter((item) => item.id !== id));
+  }
+
+  const changeQuantity = (e, id) => {
+    const newQuantity = cartItems.map((item) => {
+      if (item.id === id) {
+        return {...item, quantity: e.target.value}
+      } else {
+        return item;
+      }
+    });
+
+    setCartItems(newQuantity);
+  }
+
   const getCartTotalItems = () => {
     let total = 0;
     cartItems.forEach((item) => {
@@ -52,7 +68,7 @@ const Router = () => {
         },
         {
           path: "cart",
-          element: <Cart items={cartItems}/>
+          element: <Cart items={cartItems} remove={removeFromCart} changeQuantity={changeQuantity}/>
         }
       ]
     },

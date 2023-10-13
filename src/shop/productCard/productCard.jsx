@@ -5,8 +5,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Card = ({ id, title, image, price }) => {
 
-
-
   return (
       <div className={styles.card}>
           <h2>{title}</h2>
