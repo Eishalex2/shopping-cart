@@ -1,6 +1,7 @@
 import styles from './cart.module.css';
+import PropTypes from 'prop-types';
 
-const Cart = ({items, remove, changeQuantity}) => {
+const Cart = ({ items, remove, changeQuantity }) => {
 
   const getTotalPrice = () => {
     let total = 0;
@@ -34,12 +35,14 @@ const Cart = ({items, remove, changeQuantity}) => {
                     <button className={styles.btn} onClick={() => remove(item.id)}>Remove</button>
                   </div>
                 </div>
+
               </>
 
             )
           })
         )
       }
+      <hr />
       <div className={styles.bottom}>
         <p className={styles.total}>Total price: ${getTotalPrice()}</p>
         <button className={styles.checkout}>Checkout</button>
@@ -47,6 +50,12 @@ const Cart = ({items, remove, changeQuantity}) => {
 
     </>
   )
+}
+
+Cart.propTypes = {
+  items: PropTypes.array,
+  remove: PropTypes.func,
+  changeQuantity: PropTypes.func,
 }
 
 export default Cart;

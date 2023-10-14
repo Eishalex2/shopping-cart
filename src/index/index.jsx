@@ -15,7 +15,3 @@ const Index = () => {
 }
 
 export default Index;
-
-// things to make this pretty: Blockier text for "Adventure is out
-// there". Button transition to different color/text color on hover. The
-// header and footer look kind of bad. Consider making them just in the image

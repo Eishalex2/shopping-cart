@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import styles from './details.module.css';
+import PropTypes from 'prop-types';
 
 const Details = ({ data, addToCart }) => {
   const params = useParams();
@@ -16,7 +17,7 @@ const Details = ({ data, addToCart }) => {
     setProduct(item);
   }, [productId, data]);
 
-  if (!product) return <p>We don't have that item!</p>;
+  if (!product) return <p>We don&apos;t have that item!</p>;
 
   return (
     product && (
@@ -40,6 +41,11 @@ const Details = ({ data, addToCart }) => {
     )
 
   )
+}
+
+Details.propTypes = {
+  data: PropTypes.array,
+  addToCart: PropTypes.func,
 }
 
 export default Details;
