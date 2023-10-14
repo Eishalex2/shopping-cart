@@ -29,6 +29,7 @@ const Cart = ({items, remove, changeQuantity}) => {
         )
       }
       <div>Total price: ${getTotalPrice()}</div>
+      <button>Checkout</button>
     </>
   )
 }

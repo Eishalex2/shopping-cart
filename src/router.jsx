@@ -18,9 +18,23 @@ const Router = () => {
   }, []);
 
   const addToCart = (product, quantity) => {
-    setCartItems((prevCart) => [
-      { ...product, quantity: quantity }, ...prevCart, 
-    ]);
+    if (cartItems.length === 0) {
+      setCartItems((prevCart) => [
+        { ...product, quantity: quantity }, ...prevCart, 
+      ]);
+    } else {
+      // handles if user goes back and adds more of the same item
+      const newQuantity = cartItems.map((item) => {
+        if (item.id === product.id) {
+          let oldQuantity = item.quantity;
+          return {...item, quantity: (oldQuantity + Number(quantity))}
+        } else {
+          return item;
+        }
+      });
+
+      setCartItems(newQuantity);
+    }
   }
 
   const removeFromCart = (id) => {

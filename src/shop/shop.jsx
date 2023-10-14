@@ -5,7 +5,7 @@ import styles from './shop.module.css';
 const Shop = ({ data }) => {
 
   return (
-    <div>
+    <div className={styles.container}>
       {data && (
         data.map((product) => {
           return (

@@ -20,18 +20,22 @@ const Details = ({ data, addToCart }) => {
 
   return (
     product && (
-      <div>
-        <p>Details about product {productId}</p>
-        <p>{product.title}</p>
+      <div className={styles.container}>
         <img className={styles.img} src={product.image} alt={product.title} />
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-        <label htmlFor="quantity">Quantity</label>
-        <input type="number" id="quantity" value={quantity} min="1" onChange={(e) => setQuantity(e.target.value)}/>
-        <button onClick={(e) => {
-          e.preventDefault();
-          addToCart(product, quantity);
-        }}>Add to Cart</button>
+        <div className={styles.details}>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
+          <p>Price: ${product.price.toFixed(2)}</p>
+          <label htmlFor="quantity">Quantity: 
+            <input type="number" id="quantity" value={quantity} min="1" onChange={(e) => setQuantity(e.target.value)}/>
+          </label>
+          <button className={styles.btn} onClick={(e) => {
+            e.preventDefault();
+            addToCart(product, quantity);
+          }}>Add to Cart</button>
+        </div>
+
+
       </div>
     )
 

@@ -8,9 +8,9 @@ const Root = ({totalItems}) => {
         <h1>My Shop Name</h1>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="shop">Products</Link></li>
-            <li><Link to="cart">Cart ({totalItems})</Link></li>
+            <Link to="/" className={styles.link}><li>Home</li></Link>
+            <Link to="shop" className={styles.link}><li>Products</li></Link>
+            <Link to="cart" className={styles.link}><li>Cart ({totalItems})</li></Link>
           </ul>
         </nav>
       </header>

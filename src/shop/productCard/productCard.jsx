@@ -6,11 +6,16 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const Card = ({ id, title, image, price }) => {
 
   return (
-      <div className={styles.card}>
-          <h2>{title}</h2>
-          <Link to={`/product/${id}`}><img className={styles.img} src={image} alt={title} /></Link>
-          <p>${price}</p>
-      </div>
+    <>
+      <Link to={`/product/${id}`} className={styles.link}>
+        <div className={styles.card}>
+            <h2>{title}</h2>
+            <img className={styles.img} src={image} alt={title} />
+            <p className={styles.para}>${price.toFixed(2)}</p>
+        </div>
+      </Link>
+    </>
+
   )
 }
 

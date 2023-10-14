@@ -5,10 +5,15 @@
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 5px;
-  padding: 15px;
+  padding: 20px;
   gap: 20px;
   height: 400px;
   width: 400px;
+  transition: transform 0.3s 0.05s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .img {
@@ -18,8 +23,14 @@
 
 h2 {
   font-size: 1.5rem;
+  text-align: center;
 }
 
-p {
-  font-size: 1.2rem;
+.para {
+  font-size: 1.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

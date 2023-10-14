@@ -8,8 +8,8 @@ const Index = () => {
   return (
     <div className={styles.container}>
       <img className={styles.img} src={heroImg} alt="Rugged outdoors banner image" />
-      <p>Adventure is out there...</p>
-      <button onClick={() => navigate('shop')}>Shop Now</button>
+      <p className={styles.para}>Adventure is out there...</p>
+      <button className={styles.btn} onClick={() => navigate('shop')}>Shop Now</button>
     </div>
   )
 }

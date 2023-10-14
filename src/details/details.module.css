@@ -1,3 +1,59 @@
 .img {
-  height: 200px;
+  width: 20vw;
+  justify-self: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5%;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+
+.details p:last-of-type {
+  margin-top: 20px;
+}
+
+.details h3 {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+input {
+  margin-left: 5px;
+  line-height: 1.8rem;
+  font-size: 1rem;
+  padding: 2px 2px 2px 8px;
+  width: 100px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 20px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 200px;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s 0.05s, color 0.3s 0.05s;
+}
+
+.btn:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.btn:active {
+  box-shadow: inset 3px 2px darkgray;
 }

@@ -7,7 +7,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.container button {
+.container .btn {
   position: absolute;
   top: 55%;
   left: 50%;
@@ -20,9 +20,18 @@
   padding: 15px 30px;
   font-size: 1rem;
   font-weight: bold;
+  transition: background-color 0.3s 0.05s;
 }
 
-.container p {
+.btn:hover {
+  background-color: lightblue;
+}
+
+.btn:active {
+  box-shadow: inset 3px 2px #7BADDC;
+}
+
+.container .para {
   position: absolute;
   top: 40%;
   left: 62%;
