@@ -1,3 +1,5 @@
+import styles from './cart.module.css';
+
 const Cart = ({items, remove, changeQuantity}) => {
 
   const getTotalPrice = () => {
@@ -15,21 +17,34 @@ const Cart = ({items, remove, changeQuantity}) => {
         items && (
           items.map((item) => {
             return (
-              <div key={item.id}>
-                <p>{item.title}</p>
-                <p>{item.quantity}</p>
-                <p>${item.price}</p>
-                <p>Subtotal: ${(item.quantity * item.price).toFixed(2)}</p>
-                <label htmlFor="quantity">Quantity</label>
-                <input type="number" id="quantity" value={item.quantity} min="1" onChange={(e) => changeQuantity(e, item.id)}/>
-                <button onClick={() => remove(item.id)}>Remove from Cart</button>
-              </div>
+              <>
+                <hr />
+                <div key={item.id} className={styles.container}>
+                  <div className={styles.info}>
+                    <img className={styles.img} src={item.image} alt={item.title} />
+                    <h4 className={styles.title}>{item.title}</h4>
+                    <p className={styles.price}>Unit price: ${item.price.toFixed(2)}</p>
+                    <label htmlFor="quantity" className={styles.quantity}>Quantity: 
+                      <input type="number" id="quantity" value={item.quantity} min="1" onChange={(e) => changeQuantity(e, item.id)}/>
+                    </label>
+                  </div>
+
+                  <div className={styles.action}>
+                    <p>Item total: ${(item.quantity * item.price).toFixed(2)}</p>
+                    <button className={styles.btn} onClick={() => remove(item.id)}>Remove</button>
+                  </div>
+                </div>
+              </>
+
             )
           })
         )
       }
-      <div>Total price: ${getTotalPrice()}</div>
-      <button>Checkout</button>
+      <div className={styles.bottom}>
+        <p className={styles.total}>Total price: ${getTotalPrice()}</p>
+        <button className={styles.checkout}>Checkout</button>
+      </div>
+
     </>
   )
 }

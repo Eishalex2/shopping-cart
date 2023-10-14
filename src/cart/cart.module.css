@@ -1,0 +1,92 @@
+hr {
+  margin: 20px 15%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20%;
+}
+
+.info {
+  display: grid;
+  grid-template-areas: 
+    "image title"
+    "image price"
+    "image quantity";
+  column-gap: 20px;
+  font-size: 1.2rem;
+}
+
+.img {
+  height: 150px;
+  grid-area: image;
+}
+
+.info .title {
+  grid-area: title;
+  align-self: end;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+
+.price {
+  grid-area: price;
+}
+
+.quantity {
+  grid-area: quantity;
+}
+
+.action {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.btn,
+.checkout {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 20px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 130px;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s 0.05s, color 0.3s 0.05s;
+}
+
+.btn:hover,
+.checkout:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.btn:active,
+.checkout:active {
+  box-shadow: inset 3px 2px darkgray;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.total {
+  font-size: 1.5rem;
+}
+
+.bottom .checkout {
+  width: 170px;
+  height: 75px;
+  font-size: 1.3rem;
+}
