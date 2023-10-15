@@ -1,7 +1,7 @@
 //individual card component that shows on the products page
 import PropTypes from 'prop-types';
 import styles from './card.module.css';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Card = ({ id, title, image, price }) => {
 

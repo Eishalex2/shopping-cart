@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
 import Card from "./productCard/productCard";
 import styles from './shop.module.css';
+import PropTypes from 'prop-types'
 
 const Shop = ({ data }) => {
 
@@ -21,6 +21,10 @@ const Shop = ({ data }) => {
       )}
     </div>
   )
+}
+
+Shop.propTypes = {
+  data: PropTypes.array,
 }
 
 export default Shop;

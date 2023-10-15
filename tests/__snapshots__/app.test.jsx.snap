@@ -1,0 +1,40 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Root component > renders nav bar 1`] = `
+<div>
+  <header>
+    <h1>
+      My Shop Name
+    </h1>
+    <nav>
+      <ul>
+        <a
+          class="_link_3ccacb"
+          href="/"
+        >
+          <li>
+            Home
+          </li>
+        </a>
+        <a
+          class="_link_3ccacb"
+          href="/shop"
+        >
+          <li>
+            Products
+          </li>
+        </a>
+        <a
+          class="_link_3ccacb"
+          href="/cart"
+        >
+          <li>
+            Cart (
+            )
+          </li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+</div>
+`;
